@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="bs">
+  <head>
+    <title>Rezervacija</title>
+    <link rel="stylesheet" href="../css/rezervacija.css" />
+    <link rel="stylesheet" href="../css/stilStranica.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  </head>
+
+  <body>
+    <div class="meni">
+      <div class="logo">
+        <img src="../images/logo.jpg" alt="Logo" />
+      </div>
+      <ul>
+        <li><a href="../html/pocetna.html">Početna</a></li>
+        <li><a href="../html/sale.html">Sale</a></li>
+        <li><a href="../html/unos.html">Unos</a></li>
+        <li>
+          <a class="aktivnaStranica" href="../html/rezervacija.html"
+            >Rezervacije</a
+          >
+        </li>
+        <li><a href="">Osobe</a></li>
+      </ul>
+    </div>
+
+    <div class="sadrzaj">
+      <form>
+        <div class="labelGroup">
+          <label>Lista sala: </label>
+          <select class="dropLista" id="odabranaSala" onchange="crtaj()">
+          </select>
+          <br />
+        </div>
+        <div class="labelGroup">
+          <label>Periodicna: </label>
+          <input type="checkbox" name="periodicna" id="periodicna" /><br />
+        </div>
+        <div class="labelGroup">
+          <label>Osoba: </label>
+          <select class="dropLista" name="osoba" id="osobeLista"> 
+          </select><br />
+        </div>
+        <div class="labelGroup">
+          <label>Pocetak: </label>
+          <input
+            type="time"
+            name="pocetak"
+            id="pocetak"
+            onchange="crtaj()"
+          /><br />
+        </div>
+        <div class="labelGroup">
+          <label>Kraj: </label>
+          <input type="time" name="kraj" id="kraj" onchange="crtaj()" /><br />
+        </div>
+      </form>
+
+      <div class="kalendarWrapper">
+        <div class="kalendar">
+          <table id="vanjska">
+            <tr>
+              <th colspan="7" id="imeMjeseca">Novembar</th>
+            </tr>
+            <!--Redni dani-->
+            <tr class="sedmica">
+              <th class="redniDan">PON</th>
+              <th class="redniDan">UTO</th>
+              <th class="redniDan">SRI</th>
+              <th class="redniDan">ČET</th>
+              <th class="redniDan">PET</th>
+              <th class="redniDan">SUB</th>
+              <th class="redniDan">NED</th>
+            </tr>
+            <!--Prva Sedmica-->
+            <tr id="prva-sedmica">
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">1</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">2</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">3</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!--DRUGA sedmica-->
+            <tr id="druga-sedmica">
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">4</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">5</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">6</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">7</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">8</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">9</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">10</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!--TRECA Sedmica-->
+            <tr id="treca-sedmica">
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">11</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">12</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">13</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">14</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">15</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">16</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">17</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!--CETVRTA Sedmica-->
+            <tr id="cetvrta-sedmica">
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">18</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">19</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">20</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">21</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">22</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">23</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">24</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!--PETA Sedmica-->
+            <tr id="peta-sedmica">
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">25</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">26</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">27</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">28</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">29</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="dan">
+                  <tr>
+                    <td class="broj">30</td>
+                  </tr>
+                  <tr>
+                    <td class="slobodnaSala"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <!--SESTA Sedmica-->
+            <tr id="sesta-sedmica">
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+              <td>
+                <table class="praznaCelija">
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                  <tr>
+                    <td class="praznaCelija"></td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="formaDugmad">
+          <button class="dugmePrethodni dugmeStil" onclick="dugmePrethodni()">
+            Prethodni
+          </button>
+          <button class="dugmeSljedeci dugmeStil" onclick="dugmeSljedeci()">
+            Sljedeci
+          </button>
+        </div>
+      </div>
+    </div>
+    <p id="brojPosjetilaca"></p>
+    <script src="../js/kalendar.js"></script>
+    <script src="../js/pozivi.js"></script>
+    <script src="../js/rezervacija.js"></script>
+  </body>
+</html>

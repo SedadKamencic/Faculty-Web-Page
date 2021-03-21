@@ -1,0 +1,100 @@
+@media only all and (max-width: 600px) {
+  .meni {
+    position: relative;
+    margin-top: 50px;
+    background-color: #719ece;
+  }
+  .meni ul {
+    margin: auto;
+    text-align: center;
+    padding-left: 0%;
+    padding-bottom: 2%;
+  }
+  .logo {
+    position: relative;
+    top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+  }
+  .img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .sadrzaj {
+    margin-top: 20px;
+    height: 100%;
+    background-color: #719ece;
+  }
+  .meni li {
+    display: block;
+    padding: 0px 5px;
+  }
+}
+@media only all and (min-width: 600px) {
+  .meni {
+    position: relative;
+    margin-top: 50px;
+    background-color: #719ece;
+  }
+  .meni ul {
+    margin: auto;
+    text-align: center;
+    padding-left: 0%;
+    padding-bottom: 2%;
+  }
+  .logo {
+    position: relative;
+    top: -50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+  }
+  .img {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .sadrzaj {
+    display: block;
+    margin-top: 20px;
+    height: 100%;
+    background-color: #719ece;
+  }
+  .meni li {
+    display: inline;
+    padding: 0px 5px;
+  }
+}
+
+.slobodnaSala {
+  background-color: #00ff01;
+}
+.zauzetaSala {
+  background-color: #f6644f;
+}
+.praznaCelija {
+  border: none;
+}
+.aktivnaStranica {
+  text-decoration: none;
+}
+.dugmeStil {
+  border: 2px solid #426e9f;
+  background-color: #b0c3e1;
+  font-size: 14px;
+  padding: 15px;
+}
+.dugmePrethodni {
+  float: left;
+}
+.dugmeSljedeci {
+  float: right;
+}

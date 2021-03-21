@@ -1,0 +1,35 @@
+th,
+td {
+  border: 1px solid #f9f9f9;
+  border-collapse: collapse;
+}
+.divTabela {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+table {
+  border-collapse: collapse;
+  margin: auto;
+  position: relative;
+  text-align: center;
+}
+.headerSprat {
+  height: 40px;
+  background-color: #b3b3b3;
+}
+.headerRedni {
+  height: 40px;
+  background-color: #cccccc;
+  padding-left: 10px;
+  text-align: left;
+}
+.sala {
+  background-color: white;
+  min-width: 50px;
+}
+.kancelarija {
+  background-color: #afc3dd;
+}
+.praznaCelija{
+  background-color: #719ece;
+}

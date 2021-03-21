@@ -1,0 +1,22 @@
+.labela {
+  width: 150px;
+  min-width: 150px;
+  max-width: 150px;
+  float: left;
+}
+.forma {
+  margin: 0 auto;
+  width: 50%;
+}
+.labelGroup {
+  margin: auto;
+  padding: 5px 20px;
+  width: fit-content;
+}
+@-moz-document url-prefix() {
+  .labelGroup {
+    margin: auto;
+    padding: 5px 20px;
+    width: -moz-fit-content;
+  }
+}
